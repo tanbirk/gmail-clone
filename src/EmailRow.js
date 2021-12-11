@@ -3,11 +3,14 @@ import React from 'react'
 import './EmailRow.css'
 import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined"
 import LabelImportantOutlinedIcon from '@material-ui/icons/LabelImportantOutlined'
-
+import { useNavigate } from "react-router-dom"
 
 
 function EmailRow({ id, title, subject, description, time}) {
-    return <div className='emailRow'>
+ const navigate = useNavigate()
+
+    return (
+    <div onClick={() => navigate("/mail")} className='emailRow'>
 
         <div className='emailRow__options'>
             <IconButton>
@@ -36,7 +39,7 @@ function EmailRow({ id, title, subject, description, time}) {
         </div>
 
     </div>
-    
+    )  
 }
 
 export default EmailRow
